@@ -8,6 +8,7 @@ $(function(){
 
 
   var concert = new Date('September 18, 2017 18:00:00');
+  var ticketsOnSale = new Date('August 27, 2017 00:00:00');
 
   function pad(n) {
   	return (parseInt(n) < 10 ? '0' : '') + n;
@@ -58,5 +59,9 @@ $(function(){
     countdown = setInterval(function(){
       tickDown(Date.now());
     }, 1000);
+
+    if (Date.now() < ticketsOnSale) {
+      $("#brown-paper-bag").addClass('disabled');
+    }
   };
 });
