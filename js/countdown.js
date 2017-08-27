@@ -60,7 +60,6 @@ $(function(){
       tickDown(Date.now());
     }, 1000);
 
-    debugger
     if (Date.now() < ticketsOnSale) {
       $("#brown-paper-bag").addClass('disabled').attr('href','').text("Buy Tickets 08/28/17");
     } else {
