@@ -8,7 +8,7 @@ $(function(){
 
 
   var concert = new Date('September 18, 2017 18:00:00');
-  var ticketsOnSale = new Date('August 27, 2017 00:00:00');
+  var ticketsOnSale = new Date('August 28, 2017 00:00:00');
 
   function pad(n) {
   	return (parseInt(n) < 10 ? '0' : '') + n;
@@ -60,8 +60,11 @@ $(function(){
       tickDown(Date.now());
     }, 1000);
 
+    debugger
     if (Date.now() < ticketsOnSale) {
-      $("#brown-paper-bag").addClass('disabled');
+      $("#brown-paper-bag").addClass('disabled').attr('href','').text("Buy Tickets 08/28/17");
+    } else {
+      $("#brown-paper-bag").text("Buy Tickets");
     }
   };
 });
