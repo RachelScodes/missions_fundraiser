@@ -62,8 +62,15 @@ $(function(){
 
     if (Date.now() < ticketsOnSale) {
       $("#brown-paper-bag").addClass('disabled').attr('href','').text("Buy Tickets 08/28/17");
+      $(".cart .col-xs-6").removeClass('col-xs-6').addClass('col-xs-5');
+      $(".cart .col-xs-3").last().removeClass('col-xs-3').addClass('col-xs-4');
     } else {
       $("#brown-paper-bag").text("Buy Tickets");
+    }
+
+    var detectMobile;
+    if (detectMobile) {
+      // add mobile css
     }
   };
 });
