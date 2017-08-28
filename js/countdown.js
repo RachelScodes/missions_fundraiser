@@ -67,10 +67,5 @@ $(function(){
     } else {
       $("#brown-paper-bag").text("Buy Tickets");
     }
-
-    var detectMobile;
-    if (detectMobile) {
-      // add mobile css
-    }
   };
 });
