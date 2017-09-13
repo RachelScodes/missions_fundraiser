@@ -71,6 +71,10 @@ $(function(){
         newHref = baseHref + '78560'
         modalText = 'You are donating in support of Rachel Zevita'
         break;
+      case 'edmerald':
+        newHref = baseHref + '3078754'
+        modalText = 'You are donating in support of Edmerald Gan'
+        break;
       default:
         newHref = baseHref + '0'
         $('#back').hide();
@@ -80,6 +84,7 @@ $(function(){
     if (donateId.length > 0) {
       var capitalized = donateId.charAt(0).toUpperCase() + donateId.slice(1);
       $('#back').show();
+      $('#disclaimer-intro').text(modalText);
       $('#selected-performer').text(capitalized);
       $('.disclaimer .performer-name').text(capitalized);
       $('.donate-selection').hide();
@@ -95,6 +100,7 @@ $(function(){
 
   window.onload = function(){
     $(document).on('click', '#back', function(e){
+      $('#disclaimer-intro').text('');
       $('#selected-performer').text('Team');
       $('.disclaimer .performer-name').text('a teammate');
       $('.donate-selection').show();
