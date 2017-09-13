@@ -1,12 +1,11 @@
 $(function(){
-  var days = "Days",
-     hours = "Hours",
-   minutes = "Minutes",
-   seconds = "Seconds",
-   loading = true,
-   dividers = ['days,','hours,','minutes,','seconds until...'];
-
-
+  var countdown;
+  var days = "Days";
+  var hours = "Hours";
+  var minutes = "Minutes";
+  var seconds = "Seconds";
+  var loading = true;
+  var dividers = ['days,','hours,','minutes,','seconds until...'];
   var concert = new Date('September 18, 2017 18:00:00');
   var ticketsOnSale = new Date('August 28, 2017 00:00:00');
 
