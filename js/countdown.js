@@ -50,9 +50,60 @@ $(function(){
     setText(newCount);
   }
 
-  var countdown;
+  function setCustomDonateLink(donateId=false) {
+    var newHref, modalText;
+    var baseHref = "https://redeemer.tpsdb.com/OnlineReg/2926?GoerID=";
+
+    if (donateId || window.location.search.indexOf('donateId=') > -1) {
+      donateId = donateId || window.location.search.split('donateId=')[1].toLowerCase();
+    }
+
+    switch (donateId) {
+      case 'tiffany':
+        newHref = baseHref + '78859'
+        modalText = 'You are donating in support of Tiffany Hyun'
+        break;
+      case 'michelle':
+        newHref = baseHref + '26329'
+        modalText = 'You are donating in support of Michelle Jennings'
+        break;
+      case 'rachel':
+        newHref = baseHref + '78560'
+        modalText = 'You are donating in support of Rachel Zevita'
+        break;
+      default:
+        newHref = baseHref + '0'
+        $('#back').hide();
+        $(document).on('click', '.performers li', delegateCustomClicks);
+    }
+
+    if (donateId.length > 0) {
+      var capitalized = donateId.charAt(0).toUpperCase() + donateId.slice(1);
+      $('#back').show();
+      $('#selected-performer').text(capitalized);
+      $('.disclaimer .performer-name').text(capitalized);
+      $('.donate-selection').hide();
+    }
+
+    $('#donate-modal').attr('href', newHref)
+  }
+
+  function delegateCustomClicks(e){
+    var donateId = $(e.target).data('performer');
+    setCustomDonateLink(donateId);
+  }
 
   window.onload = function(){
+    $(document).on('click', '#back', function(e){
+      $('#selected-performer').text('Team');
+      $('.disclaimer .performer-name').text('a teammate');
+      $('.donate-selection').show();
+      setCustomDonateLink(false);
+    });
+
+    $(document).on('click', 'a.donate-cast', delegateCustomClicks);
+
+    setCustomDonateLink();
     tickDown(Date.now());
 
     countdown = setInterval(function(){

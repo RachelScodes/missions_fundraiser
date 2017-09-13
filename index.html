@@ -157,8 +157,10 @@ Created by pixpalette.com - online design magazine -->
                   Program details will be announced closer to the show.</h4>
                 </div>
                 <div role="tabpanel" class="tab-pane fade" id="cast">
+                  <hr/>
                   <div class="row cast">
                     <img src="./images/eventpage/tiffany_headshot.jpg" class="col-xs-3 headshot"/>
+                    <a class="donate-cast btn" data-performer='tiffany' class="btn" data-toggle="modal" data-target="#donate-details">Donate to Tiffany</a>
                     <h4 class="col-xs-9">
                       <span class="strong">Tiffany Hyun
                       </span>
@@ -166,7 +168,10 @@ Created by pixpalette.com - online design magazine -->
                       that music is an essential part of life and that the arts truly impact people and their culture. She hopes to cultivate the same joy that she feels about the arts into the lives of her students and listeners. She is still searching for the best donut
                       in the world.</h4>
                   </div>
+                  <hr/>
                   <div class="row cast">
+                    <img src="./images/eventpage/michelle_headshot.jpg" class="col-xs-3 headshot"/>
+                    <a class="donate-cast btn" data-performer='michelle' class="btn" data-toggle="modal" data-target="#donate-details">Donate to Michelle</a>
                     <h4 class="col-xs-9">
                       New York soprano
                       <span class="strong">Michelle Jennings
@@ -175,31 +180,37 @@ Created by pixpalette.com - online design magazine -->
                       Hudson Valley Philharmonic’s performance of the German Requiem (Brahms), and she covered the role of Roxanne (Countess) in ¡Figaro! (90210) at the Duke Theater in New York City. She is also a member of the comedic opera duo, Divas Unleashed. At home
                       in a variety of genres on the concert stage and on recordings, Michelle has performed and recorded concerts of jazz, musical revues, gospel and pop for television shows, commercials, studio recordings, and movie underscoring, heard in the US, United
                       Kingdom, Japan and Italy.</h4>
-                    <img src="./images/eventpage/michelle_headshot.jpg" class="col-xs-3 headshot"/>
                   </div>
+                  <hr/>
                   <div class="row cast">
                     <img src="./images/eventpage/rachel_headshot.jpg" class="col-xs-3 headshot"/>
+                    <a class="donate-cast btn" data-performer='rachel' class="btn" data-toggle="modal" data-target="#donate-details">Donate to Rachel</a>
                     <h4 class="col-xs-9">
-                      <span class="strong">Rachel Zevita
-                      </span>
-                      came to national attention in the U.S. when she was a Top-24 contestant on American Idol's 10th season, and has continued to be active as both a singer-songwriter and classical performer. After her time on American Idol, Rachel embarked on a world
-                      tour with Armed Forces Entertainment. She has performed in Australia, Egypt, Turkey, Italy, Portugal, Greece, Korea, and Guam. Her debut “The Echo Sessions” reached the Top 100 on the iTunes singer-songwriter chart in the U.S. She is currently
-                      writing and recording material for her next EP in New York City. Staying busy in the performing world as well, she recently sang in the premiere of William Anderson's "Unexpected Reunion” at Carnegie Hall in 2017.</h4>
+                    <span class="strong">Rachel Zevita
+                    </span>
+                    came to national attention in the U.S. when she was a Top-24 contestant on American Idol's 10th season, and has continued to be active as both a singer-songwriter and classical performer. After her time on American Idol, Rachel embarked on a world
+                    tour with Armed Forces Entertainment. She has performed in Australia, Egypt, Turkey, Italy, Portugal, Greece, Korea, and Guam. Her debut “The Echo Sessions” reached the Top 100 on the iTunes singer-songwriter chart in the U.S. She is currently
+                    writing and recording material for her next EP in New York City. Staying busy in the performing world as well, she recently sang in the premiere of William Anderson's "Unexpected Reunion” at Carnegie Hall in 2017.</h4>
                   </div>
+                  <hr/>
                   <div class="row cast">
+                    <img src="./images/eventpage/branch_headshot.jpg" class="col-xs-3 headshot"/>
+                    <a class="donate-cast btn" data-performer='branch' class="btn" data-toggle="modal" data-target="#donate-details">Donate to Branch</a>
                     <h4 class="col-xs-9">
                       <span class="strong">Branch Fields
                       </span>has been described as “a bass of resonant richness” (Opera America), and “a gifted young bass” (New York Times). He has sung with Santa Fe Opera, New York City Opera, Boston Lyric Opera, Opera Carolina, Michigan Opera Theatre, Utah Opera,
                       Opera San Jose, and in concert, Branch has performed with the Munich Philharmonic, National Symphony Orchestra, Santa Fe Symphony, Colorado Springs Philharmonic, and the American Symphony Orchestra. Branch’s versatility as a singing actor led to his
                       Broadway debut in SOUTH PACIFIC, understudying the role of Emile de Becque in the Lincoln Center Theater production, which won seven Tony Awards</h4>
-                    <img src="./images/eventpage/branch_headshot.jpg" class="col-xs-3 headshot"/>
                   </div>
+                  <hr/>
                   <div class="row cast">
                     <img src="./images/eventpage/edmerald_headshot.jpg" class="col-xs-3 headshot"/>
+                    <a class="donate-cast btn" data-performer='edmerald' class="btn" data-toggle="modal" data-target="#donate-details">Donate to Edmerald</a>
                     <h4 class="col-xs-9">
                       <span class="strong">Edmerald Gan
                       </span>is a talented singer and Actor with a beautiful Tenor range. He can be seen on TV in shows such as Law & Order, and on stage in various New York City theater productions.</h4>
                   </div>
+                  <hr/>
                 </div>
               </div>
             </div>
@@ -218,7 +229,7 @@ Created by pixpalette.com - online design magazine -->
                 </div>
                 <div class="col-xs-3">
                   <div class="text-right">
-                    <a id="donate" class="btn" target="_blank" href="https://redeemer.tpsdb.com/OnlineReg/2926?GoerID=0">Donate</a>
+                    <a id="donate" class="btn" data-toggle="modal" data-target="#donate-details">Donate</a>
                   </div>
                 </div>
                 <div class="col-xs-3">
@@ -232,7 +243,41 @@ Created by pixpalette.com - online design magazine -->
         </div>
       </div>
     </div>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- Modal -->
+    <div class="modal right fade" id="donate-details" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <!--<div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Share your contact Details</h4>
+          </div>-->
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            	<img src="images/icons/cancel.png">
+            </button>
+            <h4 class="modal-title">Disclaimer</h4>
+          </div>
+          <div class="modal-body">
+            <div class='disclaimer'>
+              <p>The trips raise support as a team. If <span class='performer-name'>a teammate</span> raises more than his/her portion, the excess will be used for other team members. If the team raises more than needed, the excess will be used for other missions projects, or at the discretion of Redeemer City To City. If, for some reason, <span class='performer-name'>a teammate</span> is unable to go on the trip, the donations will be used to support other team members or missions projects. Please note that all giving to missions is Board Designated giving, which means that Redeemer City to City management is given authority to make decisions regarding the use of missions funds in various circumstances that may come up with missions trips. Because of this, in no circumstances, are missions gifts considered Temporarily or Permanently Donor Restricted gifts to a specific trip or a specific short-term missionary's expenses on a specific trip.</p>
+            </div>
+            <div class="donate-selection">
+              <div class="selected-text">Would like like to donate towards someone in particular?</div>
+            	<div class="performers">
+            		<ul>
+                  <li class="btn" data-performer='tiffany'>Tiffany</li>
+                  <li class="btn" data-performer='michelle'>Michelle</li>
+                  <li class="btn" data-performer='rachel'>Rachel</li>
+                  <li class="btn disabled" data-performer=''>Branch (Link Unavailable)</li>
+                  <li class="btn disabled" data-performer=''>Edmerald (Link Unavailable)</li>
+          			</ul>
+              </div>
+            </div>
+            <a id="back" class="btn">Back</a>
+            <a id="donate-modal" class="btn" target="_blank" href="https://redeemer.tpsdb.com/OnlineReg/2926?GoerID=0">Donate to <span id="selected-performer">Team</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
