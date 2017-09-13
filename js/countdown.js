@@ -89,7 +89,7 @@ $(function(){
     renderNames(fullName,buttonName,modalText);
   }
 
-  function renderNames(fullName,buttonName.modalText) {
+  function renderNames(fullName,buttonName,modalText) {
     $('.disclaimer .performer-name').text(fullName);
     $('#selected-performer').text(buttonName);
     $('#disclaimer-intro').text(modalText);
@@ -97,10 +97,10 @@ $(function(){
 
   function setDonateCode(donateId) {
     var urlCode = {
-      'tiffany': '78859'
-      'michelle': '26329'
-      'rachel': '78560'
-      'edmerald': '3078754'
+      'tiffany': '78859',
+      'michelle': '26329',
+      'rachel': '78560',
+      'edmerald': '3078754',
       'branch': '105988'
     }[donateId] || '0';
 
