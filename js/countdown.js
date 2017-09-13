@@ -51,46 +51,61 @@ $(function(){
   }
 
   function setCustomDonateLink(donateId=false) {
-    var newHref, modalText;
-    var baseHref = "https://redeemer.tpsdb.com/OnlineReg/2926?GoerID=";
-
-    if (donateId || window.location.search.indexOf('donateId=') > -1) {
-      donateId = donateId || window.location.search.split('donateId=')[1].toLowerCase();
-    }
-
     switch (donateId) {
       case 'tiffany':
-        newHref = baseHref + '78859'
-        modalText = 'You are donating in support of Tiffany Hyun'
-        break;
       case 'michelle':
-        newHref = baseHref + '26329'
-        modalText = 'You are donating in support of Michelle Jennings'
-        break;
-      case 'rachel':
-        newHref = baseHref + '78560'
-        modalText = 'You are donating in support of Rachel Zevita'
-        break;
+      case 'branch':
       case 'edmerald':
-        newHref = baseHref + '3078754'
-        modalText = 'You are donating in support of Edmerald Gan'
+      case 'rachel':
+        showCustomInfo(donateId);
         break;
       default:
-        newHref = baseHref + '0'
-        $('#back').hide();
-        $(document).on('click', '.performers li', delegateCustomClicks);
+        showSelectionInfo();
+        break;
     }
 
-    if (donateId.length > 0) {
-      var capitalized = donateId.charAt(0).toUpperCase() + donateId.slice(1);
-      $('#back').show();
-      $('#disclaimer-intro').text(modalText);
-      $('#selected-performer').text(capitalized);
-      $('.disclaimer .performer-name').text(capitalized);
-      $('.donate-selection').hide();
-    }
+    setDonateCode(donateId);
+  }
 
-    $('#donate-modal').attr('href', newHref)
+  function showCustomInfo(donateId) {
+    var fullName = $('.row.cast[data-performer=\'' + donateId + '\'] .name').text();
+    var buttonName = fullName.split(' ')[0];
+    var modalText = 'You are donating in support of ' + fullName + '. ';
+
+    $('#back').show();
+    $('.donate-selection').hide();
+
+    renderNames(fullName,buttonName,modalText);
+  }
+
+  function showSelectionInfo() {
+    var fullName = 'a teammate';
+    var buttonName = 'Team';
+    var modalText = '';
+
+    $('#back').hide();
+    $('.donate-selection').show();
+
+    renderNames(fullName,buttonName,modalText);
+  }
+
+  function renderNames(fullName,buttonName.modalText) {
+    $('.disclaimer .performer-name').text(fullName);
+    $('#selected-performer').text(buttonName);
+    $('#disclaimer-intro').text(modalText);
+  }
+
+  function setDonateCode(donateId) {
+    var urlCode = {
+      'tiffany': '78859'
+      'michelle': '26329'
+      'rachel': '78560'
+      'edmerald': '3078754'
+      'branch': '105988'
+    }[donateId] || '0';
+
+    var newHref = "https://redeemer.tpsdb.com/OnlineReg/2926?GoerID=" + urlCode;
+    $('#donate-modal').attr('href', newHref);
   }
 
   function delegateCustomClicks(e){
@@ -99,17 +114,17 @@ $(function(){
   }
 
   window.onload = function(){
-    $(document).on('click', '#back', function(e){
-      $('#disclaimer-intro').text('');
-      $('#selected-performer').text('Team');
-      $('.disclaimer .performer-name').text('a teammate');
-      $('.donate-selection').show();
-      setCustomDonateLink(false);
-    });
+    $(document)
+      .on('click', '#back', function(e){ setCustomDonateLink(false); })
+      .on('click', 'a.donate-cast, .performers li', delegateCustomClicks);
 
-    $(document).on('click', 'a.donate-cast', delegateCustomClicks);
+    if (window.location.search.indexOf('donateId=') > -1) {
+      var donateId = window.location.search.split('donateId=')[1].toLowerCase();
+      setCustomDonateLink(donateId);
+    } else {
+      setCustomDonateLink();
+    }
 
-    setCustomDonateLink();
     tickDown(Date.now());
 
     countdown = setInterval(function(){
