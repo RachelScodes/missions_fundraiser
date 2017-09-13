@@ -479,6 +479,9 @@ iframe {
 	right: 0;
 }
 
+.performers ul{
+	padding: 0;
+}
 
 /* media query for tab */
 @media (max-width: 767px) {
