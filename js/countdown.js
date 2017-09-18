@@ -34,14 +34,14 @@ $(function(){
     var current_date = new Date(now).getTime();
 
     var diff = (target_date - current_date) / 1000;
-    var dys = Math.ceil(diff/86400);
+    var dys = Math.floor(diff/86400);
 
     diff = diff % 86400;
-    var hrs = Math.ceil(diff/3600);
+    var hrs = Math.floor(diff/3600);
 
     diff = diff % 3600;
 
-    var mins = Math.ceil(diff/60);
+    var mins = Math.floor(diff/60);
     var secs = 60 - new Date(now).getSeconds();
     secs = secs == 60 ? '00' : pad(secs);
 
